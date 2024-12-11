@@ -1,0 +1,9 @@
+services:
+  cfspflat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: python app.py 
+    working_dir: /app

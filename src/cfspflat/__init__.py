@@ -17,6 +17,7 @@ def flatten(
     email_subject,
     update_subject,
     fromaddress,
+    password,
     toaddress,
     update=False,
     email=True,
@@ -55,6 +56,7 @@ def flatten(
                     subject=thesubject,
                     server=email_server,
                     fromaddr=fromaddress,
+                    password=password,
                     toaddr=toaddress,
                 )
             if (mismatch and update) or force_update:
@@ -89,6 +91,7 @@ def main(args):
             dns_servers=args.resolvers,
             email_server=args.mailserver,
             fromaddress=args.fromaddr,
+            password=args.password,
             toaddress=args.toaddr,
             email_subject=args.subject,
             update_subject=args.update_subject,

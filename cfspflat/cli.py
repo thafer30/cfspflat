@@ -63,6 +63,7 @@ def parse_arguments():
         arguments.resolvers = settings.get("resolvers",[])
         arguments.toaddr = settings["email"]["to"]
         arguments.fromaddr = settings["email"]["from"]
+        arguments.password = settings["email"]["pass"]
         arguments.subject = settings["email"].get("subject", 
                 "[WARNING] SPF Records for {zone} have changed and should be updated.")
         arguments.update_subject = settings["email"].get("update_subject",
@@ -77,6 +78,7 @@ def parse_arguments():
             [
                 arguments.toaddr,
                 arguments.fromaddr,
+                arguments.password,
                 arguments.subject,
                 arguments.update_subject,
                 arguments.mailserver,
